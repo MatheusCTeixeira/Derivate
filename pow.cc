@@ -19,9 +19,15 @@ namespace m_math
 
     std::string pow::derivate(std::string var) const
     {        
-        std::size_t sz;
-        double value = std::stod(this->right_operand()->to_string(), &sz);
-        return this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{"^"}+(sz>0?std::to_string(value-1):std::string{"("}+this->right_operand()->to_string()+std::string{"-1)"})+std::string{"*"}+this->left_operand()->derivate(var);
+        try
+        {            
+            return this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{"^"}+std::to_string(std::stod(this->right_operand()->to_string(), nullptr)-1)+std::string{"*"}+this->left_operand()->derivate(var);
+        }
+        catch(std::invalid_argument e)
+        {
+            return this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{"^("}+this->right_operand()->to_string()+std::string{"-1)*"}+this->left_operand()->derivate(var);
+        }
+    
     } 
 
     std::string pow::to_string() const

@@ -1,5 +1,6 @@
 #include "function.h"
 #include "two_operands.h"
+#include <stdexcept>  
 
 #ifndef _POW_
 #define _POW_
