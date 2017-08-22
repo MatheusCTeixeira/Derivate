@@ -8,7 +8,13 @@ enum class e_types
     sum,
     sub,
     mul,
-    div
+    div,
+    pow,
+    log,
+    sin,
+    cos,
+    tan,
+    sec
 };
 
 #endif
