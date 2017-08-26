@@ -7,7 +7,7 @@ namespace m_math
 
     }
 
-    pow::pow(function * lop, function * rop):function{e_types::pow}, two_operands{lop, rop}
+    pow::pow(function * lop, function * rop):function{}, two_operands{lop, rop}
     {
 
     }
@@ -21,11 +21,11 @@ namespace m_math
     {        
         try
         {            
-            return this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{"^"}+std::to_string(std::stod(this->right_operand()->to_string(), nullptr)-1)+std::string{"*"}+this->left_operand()->derivate(var);
+            return std::string{"("}+this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{")^"}+std::to_string(std::stod(this->right_operand()->to_string(), nullptr)-1)+std::string{"*"}+this->left_operand()->derivate(var);
         }
         catch(std::invalid_argument e)
         {
-            return this->right_operand()->to_string()+std::string{"*"}+this->left_operand()->to_string()+std::string{"^("}+this->right_operand()->to_string()+std::string{"-1)*"}+this->left_operand()->derivate(var);
+            return this->right_operand()->to_string()+std::string{"*("}+this->left_operand()->to_string()+std::string{")^("}+this->right_operand()->to_string()+std::string{"-1)*"}+this->left_operand()->derivate(var);
         }
     
     } 

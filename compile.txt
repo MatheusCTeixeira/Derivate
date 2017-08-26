@@ -1,0 +1,1 @@
+g++ cos.cc div.cc exp.cc function.cc ln.cc mul.cc one_operand.cc pow.cc sec.cc sin.cc sub.cc sum.cc tan.cc two_operands.cc variable.cc -c

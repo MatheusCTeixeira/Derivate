@@ -2,7 +2,7 @@
 
 namespace m_math
 {
-    variable::variable(std::string name):function{e_types::var},m_var{name}
+    variable::variable(std::string name):function{},m_var{name}
     {
 
     }

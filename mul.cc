@@ -7,7 +7,7 @@ namespace m_math
 
     }
 
-    mul::mul(function * lop, function * rop):function{e_types::mul}, two_operands{lop, rop}
+    mul::mul(function * lop, function * rop):function{}, two_operands{lop, rop}
     {
 
     }
@@ -19,7 +19,7 @@ namespace m_math
 
     std::string mul::derivate(std::string var) const
     {
-        return this->left_operand()->derivate(var)+std::string{"*"}+this->right_operand()->to_string()+std::string{"+"}+this->left_operand()->to_string()+std::string{"*"}+this->right_operand()->derivate(var);
+        return std::string{"("}+this->left_operand()->derivate(var)+std::string{"*"}+this->right_operand()->to_string()+std::string{"+"}+this->left_operand()->to_string()+std::string{"*"}+this->right_operand()->derivate(var)+std::string{")"};
     }
 
     std::string mul::to_string() const

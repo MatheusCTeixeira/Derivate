@@ -4,7 +4,7 @@ namespace m_math
 {
     two_operands::two_operands(function * lop, function * rop):m_lop{lop}, m_rop{rop}
     {
-
+        
     }
 
     void two_operands::set_left_operand(function * lop)

@@ -2,12 +2,13 @@
 
 namespace m_math
 {
+    
     div::div(const function& lop, const function& rop):div{lop.clone(), rop.clone()}
     {
 
-    }
-
-    div::div(function * lop, function * rop):function{e_types::div}, two_operands{lop, rop}
+    }    
+    
+    div::div(function * lop, function * rop):function{} ,two_operands{lop, rop}
     {
 
     }
@@ -19,7 +20,7 @@ namespace m_math
 
     std::string div::derivate(std::string var) const
     {
-        return this->left_operand()->derivate(var)+std::string{"*"}+this->right_operand()->to_string()+std::string{"-"}+this->left_operand()->to_string()+std::string{"*"}+this->right_operand()->derivate(var)+std::string{"/("}+this->right_operand()->to_string()+std::string{")^2"};
+        return std::string{"("}+this->left_operand()->derivate(var)+std::string{"*"}+this->right_operand()->to_string()+std::string{"-"}+this->left_operand()->to_string()+std::string{"*"}+this->right_operand()->derivate(var)+std::string{"/("}+this->right_operand()->to_string()+std::string{")^2)"};
     }
 
     std::string div::to_string() const
