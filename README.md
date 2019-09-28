@@ -37,3 +37,5 @@ Output:
 ```bash
 f'(x)=((-sin(sin(x))*cos(x)*1+(sec(x))^2*1)*ln(x)+(cos(sin(x))+tan(x))*(1/x)*1)
 ```
+
+![demo](demo.gif)
